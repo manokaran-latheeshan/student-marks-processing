@@ -20,9 +20,13 @@ while True:
         subjects,marks,average,high_low,Name,Class=perfomance(ID,term)
         
         print(f"\nStudent ID: {ID}\nStudent Name: {Name}")
-        print(f"Subject   || Marks  || Highest || Lowest")
+        print(f"\n{'Subject':<15}{'Marks':>2}{'Highest':>12}{'Lowest':>10}")
+        for s,m,(h,l) in zip(subjects,marks,high_low):
+            print(f"{s:<15}{m:>2}{h:12}{l:12}")
+        print(f"\nAverage : {round(average,2)}\n")
 
-        
+
+
     elif option == str(8) : 
         break
     input("Press any key to return")
