@@ -6,9 +6,8 @@ from getData import dataExtract
 
 
 def sub_analysis(sub,term):
-    sub=sub.capitalize()
     df=dataExtract()
-    marks=df.loc[(df["Subject"]==sub) & (df["Term"]==term) , "Marks"]
+    marks=df.loc[(df["Subject"].str.lower()==sub.lower()) & (df["Term"]==term) , "Marks"].tolist()
     no_std=len(marks)
     high,low=max(marks),min(marks)
     avg=sum(marks)/len(marks)
@@ -19,5 +18,3 @@ def sub_analysis(sub,term):
         else:
             failure+=1
     return no_std,avg,high,low,Pass,failure
-
-

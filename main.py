@@ -27,11 +27,22 @@ while True:
         print(f"\nAverage : {round(average,2)}\n")
 
     elif option==str(2):
-        sub=input("Enter subject")
-        term=input("Enter term")
-        no_std,avg,high,low,Pass,failure=sub_analysis(sub,int(term))
-        print(roun(avg,2))
+        '''Given a subject: display number of students, average, highest, lowest, 
+passes and failures '''
+        sub=input("Enter subject\n")
+        term=input("Enter term\n")
+        no_std,avg,high,low,Pass,fail=sub_analysis(sub,int(term))
 
+        print(f"\n{sub.upper() :<15}{'Term: '}{term}\n")
+        print(f"{'No Of Students':<20}{': '}{no_std:<4}\n")
+        print(f"{'Average':<20}{': '}{round(avg,4):<5}\n")
+        print(f"{'Highest':<20}{': '}{high:<4}\n")
+        print(f"{'Lowest':<20}{': '}{low:<4}\n")
+        print(f"{'No of Pass':<20}{': '}{Pass:<4}\n")
+        print(f"{'No of fail':<20}{': '}{fail:<4}\n")
+
+    elif option==str(3):
+        
 
     elif option == str(8) : 
         break

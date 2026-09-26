@@ -22,6 +22,4 @@ def perfomance(ID,term):
 
     return subjects,marks,average,high_low,Name,Class
 
-subjects,marks,average,high_low,Name,Class=perfomance("s001",1)
-print(marks)
 
