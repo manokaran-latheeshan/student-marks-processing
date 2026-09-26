@@ -2,7 +2,7 @@ import pandas as pd
 from getData import dataExtract
 from Student_Performance import perfomance
 from Subject_Analysis import sub_analysis
-
+from Class_Analysis import class_analysis
 
 while True:
     print("===========================")
@@ -42,8 +42,14 @@ passes and failures '''
         print(f"{'No of fail':<20}{': '}{fail:<4}\n")
 
     elif option==str(3):
+        cls=input("Enter class name: ")
+        term=int(input("Enter term: "))
+        average,allPass,no_std=class_analysis(cls,term)
+        print(f"\nClass : {cls}\n")
+        print(f"No Of Students : {no_std}")
+        print(f"No of All Passed Students : {allPass}")
+        print(f"Class Average : {round(average,4)}\n")
         
-
     elif option == str(8) : 
         break
     input("Press any key to return")
